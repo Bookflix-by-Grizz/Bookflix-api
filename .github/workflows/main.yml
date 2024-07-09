@@ -1,23 +1,23 @@
 on:
   pull_request:
     branches:
-      -main
+      - main
 
 jobs:
   ESLint:
     name: ESLint-verify
     runs-on: ubuntu-latest
     steps:
-      -name: Setup Node
-      uses: actions/setupv@4
-      with:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
           node-version: '20.15'
           
-      -name: Checkout 
-      uses: actions/checkout@v4
+      - name: Checkout 
+        uses: actions/checkout@v4
       
-      -name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      -name: Run Eslint
-      run: npm run lint
+      - name: Run Eslint
+        run: npm run lint
